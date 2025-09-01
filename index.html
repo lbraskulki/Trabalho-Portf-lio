@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Trabalho Portfólio</title>
+  <!--abaixo é a seção onde é efetuada a definição dos estilos adotados nas seções que compõem as marcações html-->
+  <style>
+    body { font-family: Arial; margin: 0; padding: 0; }
+    header { background: #f0f0f0; padding: 10px; }
+    nav a { margin-right: 15px; text-decoration: none; color: #000; cursor: pointer; }
+    nav a:hover { text-decoration: underline; }
+    #conteudo { padding: 20px; }
+    footer { background: #f0f0f0; text-align: center; padding: 10px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+<!--abaixo é a seção principal onde são exibidos os links que o usuário clicará-->
+<header>
+  <nav>
+    <a onclick="mostrar('sobre')">Sobre mim</a>
+    <a onclick="mostrar('formacao')">Formação</a>
+    <a onclick="mostrar('portfolio')">Portfólio</a>
+    <a onclick="mostrar('contato')">Contato</a>
+  </nav>
+</header>
+
+<section id="conteudo">
+  <p>Clique em um dos links acima para ver o conteúdo.</p>
+</section>
+
+<script>
+  function mostrar(secao) {
+    let texto = "";
+
+    // Abaixo é a etapa que define o texto a ser exibido de acordo com o que foi clicado
+    if (secao === "sobre") {
+      texto = "<h1>Sobre mim</h1><p>Olá, sou Leonardo David Braskulki da Silva, tenho 29 anos, casado e tenho um filho. Minha família é o que mais amo, procuro passar a maior quantidade de tempo com eles para me divertir. Meus hobbies são: ler livros de ficção científica, jogar ragnarok e também assistir os jogos do Santos F.C junto com a minha esposa. Tenho uma empresa de prestação de serviços elétricos, tanto projetos quanto execuções elétricas chamada Braskulki Soluções Elétricas Inteligentes</p>";
+    } else if (secao === "formacao") {
+      texto = "<h1>Formação</h1><p>Sou formado em Engenharia Elétrica pela UNIFIO em Ourinhos, além de ser técnico em eletrônica pela ETEL em Ipaussu. Atualmente faço a minha segunda graduação na UNINTER no curso de Análise e Desenvolvimento de sistemas. Possuo inglês intermediário em nível quase fluente </p>";
+    } else if (secao === "portfolio") {
+      texto = "<h1>Portfólio</h1><p>Já desempenhei projetos no setor elétrico, dentre os mais importantes o resort de luxo Morro Dos Anjos em Bandeirantes-PR <p><a href='https://morrodosanjos.com.br/'>Site do Morro dos Anjos</a></p> e o empreendimento Residencial Paineiras em Garça-SP <p><a href='https://paineirasresidencial.com/'>Site do Residencial Paineiras</a></p>  </p>";
+      // abaixo é a etapa que realiza a inserção dos inputs, conforme solicitado em nossa atividade
+    } else if (secao === "contato") {
+      texto = `<h1>Contato</h1>
+               <form>
+                 <label>Nome:</label><br>
+                 <input type="text"><br><br>
+                 <label>Email:</label><br>
+                 <input type="email"><br><br>
+                 <label>Mensagem:</label><br>
+                 <textarea></textarea><br><br>
+                 <button type="submit">Enviar</button>
+               </form>`;
+    }
+
+    document.getElementById("conteudo").innerHTML = texto;
+  }
+</script>
+
+</body>
+</html>
